@@ -58,7 +58,7 @@ public class UserFacade {
 		    calendarDateAvailableToLogin.setTime(user.getDateLoginLastTry());
 		    calendarDateAvailableToLogin.add(Calendar.HOUR_OF_DAY, 1);
 			
-			if(user.getLoginTryCount() >= 3 && calendarLastLoginTry.getTime().before(calendarDateAvailableToLogin.getTime())) {
+			if(user.getLoginTryCount() >= 9 && calendarLastLoginTry.getTime().before(calendarDateAvailableToLogin.getTime())) {
 				return userLoginResultErrorViewModelFactory.loginWait("wait to " + dateFormat.format(calendarDateAvailableToLogin.getTime()));
 				//return new UserLoginResultViewModel("error", "wrong, wait to " + dateFormat.format(calendarDateAvailableToLogin.getTime()));
 			}
@@ -66,7 +66,7 @@ public class UserFacade {
 			BCryptPasswordEncoder passwordEcorder = new BCryptPasswordEncoder();
 			if(!passwordEcorder.matches(password, user.getPassword())) {
 				
-				if(user.getLoginTryCount() >= 3 && calendarLastLoginTry.getTime().after(calendarDateAvailableToLogin.getTime())) {
+				if(user.getLoginTryCount() >= 9 && calendarLastLoginTry.getTime().after(calendarDateAvailableToLogin.getTime())) {
 					user.setLoginTryCount(1);
 				} else {
 					user.setLoginTryCount(user.getLoginTryCount() + 1);
