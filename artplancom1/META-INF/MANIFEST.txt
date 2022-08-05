@@ -1,0 +1,5 @@
+Manifest-Version: 1.0  
+Built-By: Eclipse  
+Build-Jdk: 1.8.0  
+Created-By: Savva Daniil
+Main-Class: artplancom1.Main
