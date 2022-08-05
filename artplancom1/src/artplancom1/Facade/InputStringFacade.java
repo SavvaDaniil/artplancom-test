@@ -28,7 +28,7 @@ public class InputStringFacade {
 			calendarEnd.setTimeInMillis((new Date()).getTime());
 			
 			difference = calendarEnd.getTimeInMillis() - calendarStart.getTimeInMillis();
-			System.out.println("При повторении на " + timeLimit + " раз ушло: " + String.format("%.10f", (float)(difference / 1000)) + " секунд.");
+			System.out.println("РџСЂРё РїРѕРІС‚РѕСЂРµРЅРёРё РЅР° " + timeLimit + " СЂР°Р· СѓС€Р»Рѕ: " + String.format("%.10f", (float)(difference / 1000)) + " СЃРµРєСѓРЅРґ.");
 		}
 		
 		return stringReversed;
